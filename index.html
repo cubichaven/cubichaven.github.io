@@ -235,7 +235,7 @@
       linear-gradient(145deg, var(--wood-600), var(--forest-800) 70%);
     border-bottom: 1px solid rgba(212,175,55,.25);
   }
-  .preview img.shot {            /* use this when you add real preview renders */
+  .preview img.shot {
     position: absolute; inset: 0;
     width: 100%; height: 100%; object-fit: cover;
     transition: transform .8s var(--ease);
@@ -248,8 +248,17 @@
   .card:hover .preview svg,
   .card:hover .preview img.shot { transform: scale(1.06); }
 
+  /* Görselin altına hafif karartma: rozet ve kart geçişi daha okunaklı olur */
+  .preview:has(img.shot)::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, rgba(10,16,12,.25) 0%, transparent 35%, rgba(10,16,12,.55) 100%);
+    pointer-events: none;
+  }
+
   .badge {
     position: absolute; top: 14px; left: 14px;
+    z-index: 2;
     font-size: .68rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
     color: var(--forest-950);
     background: linear-gradient(135deg, var(--gold-soft), var(--gold));
@@ -275,6 +284,9 @@
     gap: 12px;
     padding: 20px 24px 24px;
   }
+  /* 3 butonlu kart: itch.io tam genişlik, iki Fab yan yana */
+  .actions .btn-wide { grid-column: 1 / -1; }
+
   .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
     padding: 12px 14px;
@@ -375,34 +387,25 @@
         <!-- Card 1 -->
         <article class="card">
           <div class="preview">
-            <!-- Gerçek önizleme için: <img class="shot" src="previews/farm.jpg" alt="..."> ekleyip SVG'yi silebilirsin -->
             <span class="badge">Environment</span>
-            <svg viewBox="0 0 200 160" role="img" aria-label="Low-poly windmill illustration">
-              <polygon points="10,150 190,150 170,140 30,140" fill="#16241b"/>
-              <polygon points="78,142 122,142 112,62 88,62" fill="#7a5a38"/>
-              <polygon points="100,62 112,62 122,142 100,142" fill="#5d4229"/>
-              <polygon points="82,62 118,62 100,34" fill="#D4AF37"/>
-              <polygon points="100,34 118,62 100,62" fill="#9c7f1f"/>
-              <polygon points="100,58 100,48 160,22 164,32" fill="#e6c85c"/>
-              <polygon points="100,58 100,68 40,94 36,84" fill="#e6c85c"/>
-              <polygon points="100,58 90,58 66,6 76,2" fill="#b8962c"/>
-              <polygon points="100,58 110,58 134,110 124,114" fill="#b8962c"/>
-              <circle cx="100" cy="58" r="6" fill="#3a2a1c" stroke="#D4AF37" stroke-width="2"/>
-              <polygon points="94,142 94,122 106,122 106,142" fill="#2a1d12"/>
-            </svg>
+            <img class="shot" src="2_0000.png" alt="Stylized medieval farm house and windmill in a low-poly style" loading="lazy">
           </div>
           <div class="card-body">
             <h3>Stylized Medieval Farm &amp; Windmill Kit</h3>
             <p>A comprehensive low-poly pack featuring a majestic windmill, rustic farm structures, and modular environment props designed for fantasy games.</p>
           </div>
           <div class="actions">
-            <a class="btn btn-itch" href="https://cubic-haven.itch.io/stylized-medieval-farmstead-windmill-kit" target="_blank" rel="noopener noreferrer">
+            <a class="btn btn-itch btn-wide" href="https://cubic-haven.itch.io/stylized-medieval-farmstead-windmill-kit" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l1 5a3 3 0 0 1-5.5 1.6A3 3 0 0 1 12 12a3 3 0 0 1-4.5-1.4A3 3 0 0 1 2 9l1-5Zm1.5 9H6v7h12v-7h1.5v8.5h-15V13Z"/></svg>
               itch.io
             </a>
             <a class="btn btn-fab" href="https://www.fab.com/listings/e34ce5ca-4fbb-4869-949c-96ae9a6a01a0" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Zm0 9 8-4.5M12 12 4 7.5M12 12v9"/></svg>
               Fab
+            </a>
+            <a class="btn btn-fab" href="https://www.fab.com/listings/9d3ed277-380c-49a7-b05e-c0f9b44a754f" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Zm0 9 8-4.5M12 12 4 7.5M12 12v9"/></svg>
+              Fab #2
             </a>
           </div>
         </article>
