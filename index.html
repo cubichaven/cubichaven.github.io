@@ -1,267 +1,492 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cubic Haven | Professional Low-Poly 3D Assets</title>
-    <style>
-        :root {
-            --bg-color: #161916;
-            --text-color: #E2E8E2;
-            --accent-color: #D4AF37;
-            --card-bg: #1E231E;
-            --card-border: rgba(212, 175, 55, 0.2);
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cubic Haven | Stylized Low-Poly 3D Asset Packs</title>
+<meta name="description" content="Cubic Haven creates stylized low-poly 3D asset packs for game developers. Available on itch.io and Fab.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+<style>
+  :root {
+    --gold: #D4AF37;
+    --gold-soft: #e6c85c;
+    --gold-deep: #9c7f1f;
+    --forest-950: #0a100c;
+    --forest-900: #0f1913;
+    --forest-800: #16241b;
+    --forest-700: #1f3326;
+    --wood-700: #3a2a1c;
+    --wood-600: #4d3824;
+    --text: #e9e4d6;
+    --text-muted: #a9a595;
+    --radius: 14px;
+    --ease: cubic-bezier(.22, .61, .36, 1);
+    --font-head: "Cinzel", "Trajan Pro", Georgia, serif;
+    --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  }
 
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
 
-        header {
-            background-color: #121512;
-            border-bottom: 1px solid var(--card-border);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
+  body {
+    margin: 0;
+    font-family: var(--font-body);
+    color: var(--text);
+    line-height: 1.6;
+    background-color: var(--forest-950);
+    background-image:
+      radial-gradient(1200px 600px at 50% -10%, rgba(31, 51, 38, .55), transparent 70%),
+      repeating-linear-gradient(90deg, rgba(255,255,255,.012) 0 2px, transparent 2px 7px);
+    -webkit-font-smoothing: antialiased;
+  }
 
-        .logo-text {
-            color: var(--accent-color);
-            font-size: 1.2rem;
-            font-weight: bold;
-            text-decoration: none;
-            letter-spacing: 2px;
-        }
+  img { max-width: 100%; display: block; }
+  a { color: inherit; text-decoration: none; }
 
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
+  /* ---------- Header ---------- */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background:
+      linear-gradient(180deg, rgba(15,25,19,.96), rgba(10,16,12,.92)),
+      repeating-linear-gradient(90deg, rgba(212,175,55,.03) 0 1px, transparent 1px 9px);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212,175,55,.28);
+    box-shadow: 0 8px 24px rgba(0,0,0,.35);
+  }
+  .nav {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .logo {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: .24em;
+    background: linear-gradient(180deg, var(--gold-soft), var(--gold) 55%, var(--gold-deep));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .logo-mark {
+    width: 22px; height: 22px;
+    background: linear-gradient(135deg, var(--gold-soft), var(--gold-deep));
+    clip-path: polygon(50% 0, 100% 25%, 100% 75%, 50% 100%, 0 75%, 0 25%);
+    flex: none;
+  }
+  .nav-links { display: flex; gap: 8px; list-style: none; margin: 0; padding: 0; }
+  .nav-links a {
+    position: relative;
+    display: block;
+    padding: 8px 18px;
+    font-size: .88rem;
+    font-weight: 500;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    transition: color .35s var(--ease);
+  }
+  .nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 18px; right: 18px; bottom: 2px;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform .4s var(--ease);
+  }
+  .nav-links a:hover, .nav-links a:focus-visible { color: var(--gold); }
+  .nav-links a:hover::after, .nav-links a:focus-visible::after { transform: scaleX(1); }
 
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
+  /* ---------- Banner ---------- */
+  .banner {
+    position: relative;
+    width: 100%;
+    background: linear-gradient(135deg, var(--forest-800), var(--wood-700));
+    border-bottom: 3px solid var(--gold);
+    overflow: hidden;
+  }
+  .banner img {
+    width: 100%;
+    height: clamp(180px, 34vw, 460px);
+    object-fit: cover;
+    object-position: center;
+  }
+  .banner::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0 0;
+    height: 45%;
+    background: linear-gradient(180deg, transparent, var(--forest-950));
+    pointer-events: none;
+  }
 
-        .banner-container {
-            width: 100%;
-            max-width: 1400px;
-            margin: 1.5rem auto 0 auto;
-            padding: 0 1rem;
-        }
+  /* ---------- Hero ---------- */
+  .hero {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 72px 24px 56px;
+    text-align: center;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: .78rem;
+    font-weight: 600;
+    letter-spacing: .3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding: 6px 16px;
+    border: 1px solid rgba(212,175,55,.4);
+    border-radius: 999px;
+    background: rgba(212,175,55,.06);
+  }
+  .hero h1 {
+    font-family: var(--font-head);
+    font-size: clamp(2.2rem, 6vw, 4rem);
+    line-height: 1.1;
+    margin: 24px 0 18px;
+    letter-spacing: .03em;
+    background: linear-gradient(180deg, #f4e3a1 0%, var(--gold) 50%, var(--gold-deep) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 30px rgba(212,175,55,.15);
+  }
+  .hero p {
+    margin: 0 auto;
+    max-width: 640px;
+    font-size: 1.08rem;
+    color: var(--text-muted);
+  }
+  .divider {
+    display: flex; align-items: center; justify-content: center; gap: 14px;
+    margin-top: 36px;
+  }
+  .divider span { height: 1px; width: 90px; background: linear-gradient(90deg, transparent, var(--gold)); }
+  .divider span:last-child { transform: scaleX(-1); }
+  .divider i {
+    width: 10px; height: 10px; background: var(--gold);
+    transform: rotate(45deg);
+  }
 
-        .banner-container img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-            border: 1px solid var(--card-border);
-            display: block;
-        }
+  /* ---------- Products ---------- */
+  .section { max-width: 1200px; margin: 0 auto; padding: 24px 24px 96px; }
+  .section-title {
+    font-family: var(--font-head);
+    font-size: 1.6rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    margin: 0 0 32px;
+    display: flex; align-items: center; gap: 18px;
+  }
+  .section-title::after {
+    content: ""; flex: 1; height: 1px;
+    background: linear-gradient(90deg, rgba(212,175,55,.5), transparent);
+  }
 
-        .hero {
-            text-align: center;
-            padding: 2.5rem 1rem 1.5rem 1rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+  }
 
-        .hero h1 {
-            color: var(--accent-color);
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            letter-spacing: 1px;
-        }
+  .card {
+    display: flex;
+    flex-direction: column;
+    background:
+      linear-gradient(180deg, rgba(31,51,38,.55), rgba(15,25,19,.95)),
+      var(--forest-900);
+    border: 1px solid rgba(212,175,55,.18);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,.4);
+    transition: transform .5s var(--ease), box-shadow .5s var(--ease), border-color .5s var(--ease);
+  }
+  .card:hover {
+    transform: translateY(-6px);
+    border-color: rgba(212,175,55,.6);
+    box-shadow: 0 18px 44px rgba(0,0,0,.55), 0 0 0 1px rgba(212,175,55,.15), 0 0 34px rgba(212,175,55,.08);
+  }
 
-        .hero p {
-            font-size: 1.1rem;
-            opacity: 0.85;
-        }
+  /* Preview area */
+  .preview {
+    position: relative;
+    aspect-ratio: 16 / 10;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 50% 40%, rgba(212,175,55,.14), transparent 60%),
+      repeating-linear-gradient(0deg, rgba(0,0,0,.14) 0 2px, transparent 2px 14px),
+      linear-gradient(145deg, var(--wood-600), var(--forest-800) 70%);
+    border-bottom: 1px solid rgba(212,175,55,.25);
+  }
+  .preview img.shot {            /* use this when you add real preview renders */
+    position: absolute; inset: 0;
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform .8s var(--ease);
+  }
+  .preview svg {
+    width: 62%; height: auto;
+    filter: drop-shadow(0 10px 18px rgba(0,0,0,.5));
+    transition: transform .8s var(--ease);
+  }
+  .card:hover .preview svg,
+  .card:hover .preview img.shot { transform: scale(1.06); }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 1rem auto 4rem auto;
-            flex: 1;
-        }
+  .badge {
+    position: absolute; top: 14px; left: 14px;
+    font-size: .68rem; font-weight: 600; letter-spacing: .16em; text-transform: uppercase;
+    color: var(--forest-950);
+    background: linear-gradient(135deg, var(--gold-soft), var(--gold));
+    padding: 5px 10px;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 8px) 100%, 0 100%);
+    padding-right: 16px;
+  }
 
-        .section-title {
-            font-size: 1.5rem;
-            margin-bottom: 2rem;
-            border-bottom: 2px solid var(--card-border);
-            padding-bottom: 0.5rem;
-            color: var(--accent-color);
-        }
+  .card-body { padding: 24px 24px 12px; flex: 1; }
+  .card-body h3 {
+    font-family: var(--font-head);
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin: 0 0 12px;
+    color: #f2e6b8;
+  }
+  .card-body p { margin: 0; color: var(--text-muted); font-size: .95rem; }
 
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 2rem;
-        }
+  /* Dual-marketplace buttons */
+  .actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 20px 24px 24px;
+  }
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    padding: 12px 14px;
+    font-size: .85rem; font-weight: 600; letter-spacing: .06em;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: transform .35s var(--ease), background .35s var(--ease), color .35s var(--ease),
+                border-color .35s var(--ease), box-shadow .35s var(--ease);
+  }
+  .btn svg { width: 16px; height: 16px; flex: none; }
+  .btn-itch {
+    color: var(--forest-950);
+    background: linear-gradient(180deg, var(--gold-soft), var(--gold) 60%, var(--gold-deep));
+  }
+  .btn-itch:hover, .btn-itch:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212,175,55,.3);
+    filter: brightness(1.06);
+  }
+  .btn-fab {
+    color: var(--gold);
+    background: rgba(212,175,55,.05);
+    border-color: rgba(212,175,55,.55);
+  }
+  .btn-fab:hover, .btn-fab:focus-visible {
+    transform: translateY(-2px);
+    background: rgba(212,175,55,.14);
+    border-color: var(--gold);
+    box-shadow: 0 8px 20px rgba(0,0,0,.35);
+  }
+  .btn:focus-visible, .nav-links a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 
-        .product-card {
-            background-color: var(--card-bg);
-            border-radius: 10px;
-            border: 1px solid var(--card-border);
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
+  /* ---------- Footer ---------- */
+  .site-footer {
+    border-top: 1px solid rgba(212,175,55,.25);
+    background: var(--forest-900);
+    text-align: center;
+    padding: 36px 24px;
+    color: var(--text-muted);
+    font-size: .85rem;
+  }
+  .site-footer .logo { font-size: 1rem; margin-bottom: 10px; }
+  .site-footer a { color: var(--gold); transition: color .3s var(--ease); }
+  .site-footer a:hover { color: var(--gold-soft); }
 
-        .product-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.5);
-            border-color: rgba(212, 175, 55, 0.4);
-        }
-
-        .product-thumb {
-            width: 100%;
-            height: 200px;
-            background-color: #262c26;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--accent-color);
-            font-weight: bold;
-            font-size: 1.1rem;
-            border-bottom: 1px solid var(--card-border);
-        }
-
-        .product-content {
-            padding: 1.5rem;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-        }
-
-        .product-content h3 {
-            margin-bottom: 0.5rem;
-            font-size: 1.3rem;
-        }
-
-        .product-content p {
-            font-size: 0.95rem;
-            opacity: 0.8;
-            margin-bottom: 1.5rem;
-            flex: 1;
-        }
-
-        .button-group {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .btn {
-            flex: 1;
-            background-color: var(--accent-color);
-            color: #121512;
-            padding: 0.7rem 1rem;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 0.9rem;
-            text-align: center;
-            transition: background-color 0.2s;
-        }
-
-        .btn:hover {
-            background-color: #e6c558;
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--accent-color);
-            border: 1px solid var(--accent-color);
-        }
-
-        .btn-secondary:hover {
-            background-color: rgba(212, 175, 55, 0.1);
-            color: var(--accent-color);
-        }
-
-        footer {
-            background-color: #121512;
-            border-top: 1px solid var(--card-border);
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-    </style>
+  /* ---------- Responsive ---------- */
+  @media (max-width: 560px) {
+    .nav { padding: 12px 16px; }
+    .logo { font-size: 1.05rem; letter-spacing: .16em; }
+    .nav-links a { padding: 8px 10px; font-size: .78rem; }
+    .hero { padding: 48px 20px 40px; }
+    .actions { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
 </head>
+
 <body>
 
-    <header>
-        <a href="#" class="logo-text">CUBIC HAVEN</a>
-        <div class="nav-links">
-            <a href="#assets">Assets</a>
-            <a href="https://itch.io" target="_blank">Store</a>
-        </div>
-    </header>
+  <!-- Sticky Header -->
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a href="#" class="logo" aria-label="Cubic Haven home">
+        <span class="logo-mark" aria-hidden="true"></span>CUBIC HAVEN
+      </a>
+      <ul class="nav-links">
+        <li><a href="#assets">Assets</a></li>
+        <li><a href="https://cubic-haven.itch.io/" target="_blank" rel="noopener noreferrer">Store</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="banner-container">
-        <img src="banner.jpg" alt="Cubic Haven Banner">
-    </div>
+  <!-- Banner -->
+  <div class="banner">
+    <img src="banner.jpg" alt="Cubic Haven – stylized low-poly 3D asset packs banner" fetchpriority="high">
+  </div>
 
+  <main>
+    <!-- Hero -->
     <section class="hero">
-        <h1>Stylized Low-Poly Worlds</h1>
-        <p>High-performance, game-ready 3D asset packs crafted for independent creators.</p>
+      <span class="eyebrow">Game-Ready 3D Asset Packs</span>
+      <h1>Stylized Low-Poly Worlds</h1>
+      <p>
+        Cubic Haven crafts hand-built, performance-friendly low-poly asset packs for game developers —
+        warm wooden textures, modular pieces, and a cohesive stylized look ready to drop into your next project.
+      </p>
+      <div class="divider" aria-hidden="true"><span></span><i></i><span></span></div>
     </section>
 
-    <div class="container" id="assets">
-        <h2 class="section-title">Featured Asset Packs</h2>
-        
-        <div class="grid">
-            <!-- Ürün 1: Stilize Ortaçağ Çiftliği ve Yel Değirmeni Kiti -->
-            <div class="product-card">
-                <div class="product-thumb">Farm & Windmill Preview</div>
-                <div class="product-content">
-                    <h3>Stylized Medieval Farm & Windmill Kit</h3>
-                    <p>A comprehensive low-poly pack featuring a majestic windmill, rustic farm structures, and modular environment props designed for fantasy games.</p>
-                    <div class="button-group">
-                        <a href="#" target="_blank" class="btn">itch.io</a>
-                        <a href="https://www.fab.com/listings/e34ce5ca-4fbb-4869-949c-96ae9a6a01a0" target="_blank" class="btn btn-secondary">Fab</a>
-                    </div>
-                </div>
-            </div>
+    <!-- Products -->
+    <section class="section" id="assets">
+      <h2 class="section-title">Asset Packs</h2>
 
-            <!-- Ürün 2: Stilize Ahşap Arabalar ve Vagonlar Kiti -->
-            <div class="product-card">
-                <div class="product-thumb">Carts & Wagons Preview</div>
-                <div class="product-content">
-                    <h3>Stylized Wooden Carts & Wagons Kit</h3>
-                    <p>A detailed collection of low-poly handcarts, trading wagons, and transport props tailored to bring life and movement to rural game environments.</p>
-                    <div class="button-group">
-                        <a href="#" target="_blank" class="btn">itch.io</a>
-                        <a href="#" target="_blank" class="btn btn-secondary">Fab</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+      <div class="grid">
 
-    <footer>
-        <p>&copy; 2026 Cubic Haven. All rights reserved.</p>
-    </footer>
+        <!-- Card 1 -->
+        <article class="card">
+          <div class="preview">
+            <!-- Gerçek önizleme için: <img class="shot" src="previews/farm.jpg" alt="..."> ekleyip SVG'yi silebilirsin -->
+            <span class="badge">Environment</span>
+            <svg viewBox="0 0 200 160" role="img" aria-label="Low-poly windmill illustration">
+              <polygon points="10,150 190,150 170,140 30,140" fill="#16241b"/>
+              <polygon points="78,142 122,142 112,62 88,62" fill="#7a5a38"/>
+              <polygon points="100,62 112,62 122,142 100,142" fill="#5d4229"/>
+              <polygon points="82,62 118,62 100,34" fill="#D4AF37"/>
+              <polygon points="100,34 118,62 100,62" fill="#9c7f1f"/>
+              <polygon points="100,58 100,48 160,22 164,32" fill="#e6c85c"/>
+              <polygon points="100,58 100,68 40,94 36,84" fill="#e6c85c"/>
+              <polygon points="100,58 90,58 66,6 76,2" fill="#b8962c"/>
+              <polygon points="100,58 110,58 134,110 124,114" fill="#b8962c"/>
+              <circle cx="100" cy="58" r="6" fill="#3a2a1c" stroke="#D4AF37" stroke-width="2"/>
+              <polygon points="94,142 94,122 106,122 106,142" fill="#2a1d12"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>Stylized Medieval Farm &amp; Windmill Kit</h3>
+            <p>A comprehensive low-poly pack featuring a majestic windmill, rustic farm structures, and modular environment props designed for fantasy games.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-itch" href="https://cubic-haven.itch.io/stylized-medieval-farmstead-windmill-kit" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l1 5a3 3 0 0 1-5.5 1.6A3 3 0 0 1 12 12a3 3 0 0 1-4.5-1.4A3 3 0 0 1 2 9l1-5Zm1.5 9H6v7h12v-7h1.5v8.5h-15V13Z"/></svg>
+              itch.io
+            </a>
+            <a class="btn btn-fab" href="https://www.fab.com/listings/e34ce5ca-4fbb-4869-949c-96ae9a6a01a0" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Zm0 9 8-4.5M12 12 4 7.5M12 12v9"/></svg>
+              Fab
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="card">
+          <div class="preview">
+            <span class="badge">Props &amp; Vehicles</span>
+            <svg viewBox="0 0 200 160" role="img" aria-label="Low-poly wooden cart illustration">
+              <polygon points="10,150 190,150 170,142 30,142" fill="#16241b"/>
+              <polygon points="40,62 150,62 140,100 50,100" fill="#7a5a38"/>
+              <polygon points="40,62 150,62 144,74 46,74" fill="#9a7348"/>
+              <polygon points="140,100 150,62 164,70 152,104" fill="#5d4229"/>
+              <polygon points="150,78 190,92 186,98 148,86" fill="#4d3824"/>
+              <polygon points="62,100 76,100 76,112 62,112" fill="#3a2a1c"/>
+              <polygon points="82,104 100,100 118,104 126,122 118,140 100,146 82,140 74,122" fill="#4d3824" stroke="#D4AF37" stroke-width="3"/>
+              <polygon points="100,124 100,100 118,104" fill="#6b4e2f"/>
+              <circle cx="100" cy="123" r="5" fill="#D4AF37"/>
+              <polygon points="40,62 28,40 36,38 48,62" fill="#4d3824"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>Stylized Wooden Carts &amp; Wagons Kit</h3>
+            <p>A detailed collection of low-poly handcarts, trading wagons, and transport props tailored to bring life and movement to rural game environments.</p>
+          </div>
+          <div class="actions">
+            <!-- itch.io ürün linkin hazır olunca bu adresi değiştir -->
+            <a class="btn btn-itch" href="https://cubic-haven.itch.io/" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l1 5a3 3 0 0 1-5.5 1.6A3 3 0 0 1 12 12a3 3 0 0 1-4.5-1.4A3 3 0 0 1 2 9l1-5Zm1.5 9H6v7h12v-7h1.5v8.5h-15V13Z"/></svg>
+              itch.io
+            </a>
+            <a class="btn btn-fab" href="https://www.fab.com/listings/f68f36fd-d7a6-4c39-98ef-70a9f1f5d012" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Zm0 9 8-4.5M12 12 4 7.5M12 12v9"/></svg>
+              Fab
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="card">
+          <div class="preview">
+            <span class="badge">Interior Props</span>
+            <svg viewBox="0 0 200 160" role="img" aria-label="Low-poly wooden table and chair illustration">
+              <polygon points="10,150 190,150 170,142 30,142" fill="#16241b"/>
+              <polygon points="30,70 130,70 150,84 50,84" fill="#a07a4c"/>
+              <polygon points="50,84 150,84 150,92 50,92" fill="#6b4e2f"/>
+              <polygon points="54,92 64,92 64,144 54,144" fill="#4d3824"/>
+              <polygon points="136,92 146,92 146,144 136,144" fill="#3a2a1c"/>
+              <polygon points="160,104 190,104 190,114 160,114" fill="#7a5a38"/>
+              <polygon points="160,60 168,60 168,144 160,144" fill="#5d4229"/>
+              <polygon points="160,60 188,60 188,100 160,100" fill="#4d3824"/>
+              <polygon points="184,114 190,114 190,144 184,144" fill="#3a2a1c"/>
+              <polygon points="80,70 84,50 98,50 102,70" fill="#D4AF37"/>
+              <polygon points="91,50 98,50 102,70 91,70" fill="#9c7f1f"/>
+              <polygon points="86,50 96,50 91,38" fill="#e6c85c"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <h3>Medieval Farm Furniture &amp; Props</h3>
+            <p>Essential rustic furniture and props to bring authenticity and detail to your medieval farm and village interiors.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-itch" href="https://cubic-haven.itch.io/cubic-haven-stylized-medieval-farm-furnitureprops" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l1 5a3 3 0 0 1-5.5 1.6A3 3 0 0 1 12 12a3 3 0 0 1-4.5-1.4A3 3 0 0 1 2 9l1-5Zm1.5 9H6v7h12v-7h1.5v8.5h-15V13Z"/></svg>
+              itch.io
+            </a>
+            <a class="btn btn-fab" href="https://www.fab.com/listings/974506fd-68a4-4400-b77c-08a0fe60c2c0" target="_blank" rel="noopener noreferrer">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Zm0 9 8-4.5M12 12 4 7.5M12 12v9"/></svg>
+              Fab
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="logo"><span class="logo-mark" aria-hidden="true"></span>CUBIC HAVEN</div>
+    <p>Stylized low-poly 3D assets for game developers.<br>
+      Find us on <a href="https://cubic-haven.itch.io/" target="_blank" rel="noopener noreferrer">itch.io</a>
+      and <a href="https://www.fab.com/" target="_blank" rel="noopener noreferrer">Fab</a>.</p>
+    <p>&copy; 2026 Cubic Haven. All rights reserved.</p>
+  </footer>
 
 </body>
 </html>
