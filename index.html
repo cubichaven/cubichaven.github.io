@@ -8,7 +8,7 @@
         :root {
             --bg-color: #161916;
             --text-color: #E2E8E2;
-            --accent-color: #D4AF37; /* Altın / Metalik Vurgu */
+            --accent-color: #D4AF37;
             --card-bg: #1E231E;
             --card-border: rgba(212, 175, 55, 0.2);
         }
@@ -61,7 +61,6 @@
             color: var(--accent-color);
         }
 
-        /* Banner Alanı */
         .banner-container {
             width: 100%;
             max-width: 1400px;
@@ -166,19 +165,37 @@
             flex: 1;
         }
 
+        .button-group {
+            display: flex;
+            gap: 0.5rem;
+        }
+
         .btn {
+            flex: 1;
             background-color: var(--accent-color);
             color: #121512;
-            padding: 0.75rem 1.5rem;
+            padding: 0.7rem 1rem;
             border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
+            font-size: 0.9rem;
             text-align: center;
             transition: background-color 0.2s;
         }
 
         .btn:hover {
             background-color: #e6c558;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(212, 175, 55, 0.1);
+            color: var(--accent-color);
         }
 
         footer {
@@ -197,11 +214,10 @@
         <a href="#" class="logo-text">CUBIC HAVEN</a>
         <div class="nav-links">
             <a href="#assets">Assets</a>
-            <a href="https://itch.io" target="_blank">itch.io Store</a>
+            <a href="https://itch.io" target="_blank">Store</a>
         </div>
     </header>
 
-    <!-- Banner Görseli En Üst Kısımda -->
     <div class="banner-container">
         <img src="banner.jpg" alt="Cubic Haven Banner">
     </div>
@@ -215,23 +231,29 @@
         <h2 class="section-title">Featured Asset Packs</h2>
         
         <div class="grid">
-            <!-- Ürün 1 -->
+            <!-- Ürün 1: Stilize Ortaçağ Çiftliği ve Yel Değirmeni Kiti -->
             <div class="product-card">
-                <div class="product-thumb">Medieval Pack Preview</div>
+                <div class="product-thumb">Farm & Windmill Preview</div>
                 <div class="product-content">
-                    <h3>Medieval Wooden Structures</h3>
-                    <p>A comprehensive pack of modular low-poly buildings and rustic props for fantasy environments.</p>
-                    <a href="BURAYA_ITCH_IO_LINKINI_YAZIN" target="_blank" class="btn">Get on itch.io</a>
+                    <h3>Stylized Medieval Farm & Windmill Kit</h3>
+                    <p>A comprehensive low-poly pack featuring a majestic windmill, rustic farm structures, and modular environment props designed for fantasy games.</p>
+                    <div class="button-group">
+                        <a href="BURAYA_ITCH_IO_URUN_LINKINI_YAZIN" target="_blank" class="btn">itch.io</a>
+                        <a href="BURAYA_FAB_URUN_LINKINI_YAZIN" target="_blank" class="btn btn-secondary">Fab</a>
+                    </div>
                 </div>
             </div>
 
-            <!-- Ürün 2 -->
+            <!-- Ürün 2: Stilize Ahşap Arabalar ve Vagonlar Kiti -->
             <div class="product-card">
-                <div class="product-thumb">Nature & Forest Preview</div>
+                <div class="product-thumb">Carts & Wagons Preview</div>
                 <div class="product-content">
-                    <h3>Stylized Forest Environment</h3>
-                    <p>Low-poly pine trees, rocks, and foliage optimized for smooth performance in Unity and Unreal Engine.</p>
-                    <a href="BURAYA_ITCH_IO_LINKINI_YAZIN" target="_blank" class="btn">Get on itch.io</a>
+                    <h3>Stylized Wooden Carts & Wagons Kit</h3>
+                    <p>A detailed collection of low-poly handcarts, trading wagons, and transport props tailored to bring life and movement to rural game environments.</p>
+                    <div class="button-group">
+                        <a href="BURAYA_ITCH_IO_URUN_LINKINI_YAZIN" target="_blank" class="btn">itch.io</a>
+                        <a href="BURAYA_FAB_URUN_LINKINI_YAZIN" target="_blank" class="btn btn-secondary">Fab</a>
+                    </div>
                 </div>
             </div>
         </div>
