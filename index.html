@@ -242,7 +242,6 @@
   }
   .card:hover .preview img.shot { transform: scale(1.06); }
 
-  /* Görselin altına hafif karartma: rozet ve kart geçişi daha okunaklı olur */
   .preview:has(img.shot)::after {
     content: "";
     position: absolute; inset: 0;
@@ -278,8 +277,6 @@
     gap: 12px;
     padding: 20px 24px 24px;
   }
-  /* 3 butonlu kart: itch.io tam genişlik, iki Fab yan yana */
-  .actions .btn-wide { grid-column: 1 / -1; }
 
   .btn {
     display: inline-flex; align-items: center; justify-content: center; gap: 8px;
@@ -378,7 +375,25 @@
 
       <div class="grid">
 
-        <!-- Card 1 -->
+        <!-- Card 1 (Yeni Eklenen Ücretsiz Paket) -->
+        <article class="card">
+          <div class="preview">
+            <span class="badge">Free Pack</span>
+            <img class="shot" src="Rustik Ahşap Varlıklar_ CUBIC HAVEN.jpg" alt="Rustic Wooden Assets free pack" loading="lazy">
+          </div>
+          <div class="card-body">
+            <h3>Rustic Wooden Assets</h3>
+            <p>A free collection of rustic wooden props and assets to help you quickly detail your stylized game environments.</p>
+          </div>
+          <div class="actions">
+            <a class="btn btn-itch btn-wide" style="grid-column: 1 / -1;" href="https://www.fab.com/listings/cddc8c5a-7fc6-4a5d-a8e2-e53e385471ba" target="_blank" rel="noopener noreferrer" translate="no">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Zm0 9 8-4.5M12 12 4 7.5M12 12v9"/></svg>
+              Get Free on Fab
+            </a>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
         <article class="card">
           <div class="preview">
             <span class="badge">Environment</span>
@@ -389,26 +404,22 @@
             <p>A comprehensive low-poly pack featuring a majestic windmill, rustic farm structures, and modular environment props designed for fantasy games.</p>
           </div>
           <div class="actions">
-            <a class="btn btn-itch btn-wide" href="https://cubic-haven.itch.io/stylized-medieval-farmstead-windmill-kit" target="_blank" rel="noopener noreferrer">
+            <a class="btn btn-itch" href="https://cubic-haven.itch.io/stylized-medieval-farmstead-windmill-kit" target="_blank" rel="noopener noreferrer">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l1 5a3 3 0 0 1-5.5 1.6A3 3 0 0 1 12 12a3 3 0 0 1-4.5-1.4A3 3 0 0 1 2 9l1-5Zm1.5 9H6v7h12v-7h1.5v8.5h-15V13Z"/></svg>
               itch.io
             </a>
-            <a class="btn btn-fab" href="https://www.fab.com/listings/e34ce5ca-4fbb-4869-949c-96ae9a6a01a0" target="_blank" rel="noopener noreferrer">
+            <a class="btn btn-fab" href="https://www.fab.com/listings/e34ce5ca-4fbb-4869-949c-96ae9a6a01a0" target="_blank" rel="noopener noreferrer" translate="no">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Zm0 9 8-4.5M12 12 4 7.5M12 12v9"/></svg>
               Fab
-            </a>
-            <a class="btn btn-fab" href="https://www.fab.com/listings/9d3ed277-380c-49a7-b05e-c0f9b44a754f" target="_blank" rel="noopener noreferrer">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Zm0 9 8-4.5M12 12 4 7.5M12 12v9"/></svg>
-              Fab #2
             </a>
           </div>
         </article>
 
-        <!-- Card 2 -->
+        <!-- Card 3 -->
         <article class="card">
           <div class="preview">
             <span class="badge">Props &amp; Vehicles</span>
-            <img class="shot" src="Wagons.jpg" alt="Stylized wooden carts and wagons kit" loading="lazy">
+            <img class="shot" src="Anakapak3.jpg" alt="Stylized wooden carts and wagons kit" loading="lazy">
           </div>
           <div class="card-body">
             <h3>Stylized Wooden Carts &amp; Wagons Kit</h3>
@@ -419,18 +430,18 @@
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l1 5a3 3 0 0 1-5.5 1.6A3 3 0 0 1 12 12a3 3 0 0 1-4.5-1.4A3 3 0 0 1 2 9l1-5Zm1.5 9H6v7h12v-7h1.5v8.5h-15V13Z"/></svg>
               itch.io
             </a>
-            <a class="btn btn-fab" href="https://www.fab.com/listings/f68f36fd-d7a6-4c39-98ef-70a9f1f5d012" target="_blank" rel="noopener noreferrer">
+            <a class="btn btn-fab" href="https://www.fab.com/listings/f68f36fd-d7a6-4c39-98ef-70a9f1f5d012" target="_blank" rel="noopener noreferrer" translate="no">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Zm0 9 8-4.5M12 12 4 7.5M12 12v9"/></svg>
               Fab
             </a>
           </div>
         </article>
 
-        <!-- Card 3 -->
+        <!-- Card 4 -->
         <article class="card">
           <div class="preview">
             <span class="badge">Interior Props</span>
-            <img class="shot" src="7.jpg" alt="Medieval farm furniture and interior props" loading="lazy">
+            <img class="shot" src="farm_tools.jpg" alt="Medieval farm furniture and interior props" loading="lazy">
           </div>
           <div class="card-body">
             <h3>Medieval Farm Furniture &amp; Props</h3>
@@ -441,7 +452,7 @@
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 4h18l1 5a3 3 0 0 1-5.5 1.6A3 3 0 0 1 12 12a3 3 0 0 1-4.5-1.4A3 3 0 0 1 2 9l1-5Zm1.5 9H6v7h12v-7h1.5v8.5h-15V13Z"/></svg>
               itch.io
             </a>
-            <a class="btn btn-fab" href="https://www.fab.com/listings/974506fd-68a4-4400-b77c-08a0fe60c2c0" target="_blank" rel="noopener noreferrer">
+            <a class="btn btn-fab" href="https://www.fab.com/listings/974506fd-68a4-4400-b77c-08a0fe60c2c0" target="_blank" rel="noopener noreferrer" translate="no">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Zm0 9 8-4.5M12 12 4 7.5M12 12v9"/></svg>
               Fab
             </a>
@@ -456,7 +467,7 @@
     <div class="logo"><span class="logo-mark" aria-hidden="true"></span>CUBIC HAVEN</div>
     <p>Stylized low-poly 3D assets for game developers.<br>
       Find us on <a href="https://cubic-haven.itch.io/" target="_blank" rel="noopener noreferrer">itch.io</a>
-      and <a href="https://www.fab.com/" target="_blank" rel="noopener noreferrer">Fab</a>.</p>
+      and <a href="https://www.fab.com/" target="_blank" rel="noopener noreferrer" translate="no">Fab</a>.</p>
     <p>&copy; 2026 Cubic Haven. All rights reserved.</p>
   </footer>
 
